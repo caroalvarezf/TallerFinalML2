@@ -1,0 +1,33 @@
+hyperparams:
+  # extractor: {}
+  # selector: 
+  #   feature_columns:  ["mnth", "hr","season", "holiday", "weekday", "workingday",
+  #          "weathersit","temp", "hum", "windspeed",last_30days"]
+  #lineal: {}
+  regressor:
+    n_estimators: 50
+    max_depth: null
+    max_samples: 3
+
+data:
+  filepath: ./dataset.csv
+
+metrics:
+  - name:  bike number error
+    params: { understock_cost: 0.6, overstock_cost: 0.4}
+
+search:
+  jobs: -1
+  grid:
+    #extractor: {}
+    #Selector: {}
+    regressor:
+      n_estimators: [100, 200]
+      max_depth: [null, 5, 10]
+      max_samples: [2,5]
+
+export:
+  output_dir: ./models
+
+reports:
+  dir: ./reports

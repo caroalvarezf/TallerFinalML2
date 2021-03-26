@@ -1,0 +1,4 @@
+regressor:
+  max_depth: null
+  max_samples: 2
+  n_estimators: 100
